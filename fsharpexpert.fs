@@ -58,3 +58,20 @@ let xs1 = [Some(3);None;Some(5);None;Some(10)]
 let xs2 = Option.map (fun x -> x * 2) 
 
 xs1 |> List.map (Option.map (fun x -> x *2)) |> ignore
+
+
+let xs = [1; 2; 3; 4; 5]
+xs |> List.collect (fun x -> List.replicate 3 x)
+
+let repCol n x   =  (List.replicate n x)  << List.collect  
+
+let repCol (xs:list<'T>) = (List.replicate 3 xs) << List.collect
+
+
+let repCol n xs = (List.replicate n ) << List.collect xs 
+
+let repCol n xs = (List.replicate >> List.collect) n xs
+
+repCol 4 xs
+
+[<Literal>] let X = __SOURCE_DIRECTORY__ + @"\blah"
