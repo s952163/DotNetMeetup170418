@@ -75,3 +75,24 @@ let repCol n xs = (List.replicate >> List.collect) n xs
 repCol 4 xs
 
 [<Literal>] let X = __SOURCE_DIRECTORY__ + @"\blah"
+
+
+
+open FSharp.Linq.NullableOperators
+
+
+let x = System.Nullable<float> 4.
+let y = x ?* 3.0
+
+System.Nullable(0.)
+System.Nullable 0.
+
+Option.ofNullable(y)
+
+float y
+
+open System.Collections.Generic
+let xs = ResizeArray [1;2;3]
+xs.RemoveAt(2)
+
+xs
